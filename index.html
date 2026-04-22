@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHAEN 茶園 — Casa de Té</title>
+  <meta name="description"
+    content="CHAEN 茶園 — Casa de té en Palermo, Buenos Aires. Matcha ceremonial de Uji, tés japoneses y repostería artesanal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&family=Sora:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Loader de entrada -->
+  <div class="loader" id="loader">
+    <div class="loader__content">
+      <svg xmlns="http://www.w3.org/2000/svg" class="loader__logo" viewBox="0 0 80 80" width="80" height="80">
+        <circle cx="40" cy="40" r="36" fill="none" stroke="#A8C68F" stroke-width="1.5" stroke-dasharray="226"
+          stroke-dashoffset="226">
+          <animate attributeName="stroke-dashoffset" from="226" to="0" dur="1.2s" fill="freeze" />
+        </circle>
+        <path d="M40 16 C30 28, 24 40, 28 56 C32 64, 40 68, 40 68 C40 68, 48 64, 52 56 C56 40, 50 28, 40 16Z"
+          fill="#7B9E5A" opacity="0">
+          <animate attributeName="opacity" from="0" to="0.8" dur="0.6s" begin="0.6s" fill="freeze" />
+        </path>
+      </svg>
+      <p class="loader__text">CHAEN 茶園</p>
+    </div>
+  </div>
+
+  <!-- Header con navegación -->
+  <header class="header" id="header">
+    <div class="header__container">
+      <a href="#inicio" class="header__logo">
+        <svg xmlns="http://www.w3.org/2000/svg" class="header__logo-icon" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M20 8 C15 14, 12 20, 14 28 C16 32, 20 34, 20 34 C20 34, 24 32, 26 28 C28 20, 25 14, 20 8Z"
+            fill="currentColor" opacity="0.8" />
+          <path d="M16 18 Q20 14 24 18" fill="none" stroke="#F5F0E8" stroke-width="1" opacity="0.6" />
+          <path d="M17 22 Q20 18 23 22" fill="none" stroke="#F5F0E8" stroke-width="1" opacity="0.4" />
+        </svg>
+        <span class="header__logo-text">CHAEN <span class="header__logo-kanji">茶園</span></span>
+      </a>
+      <button class="header__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+      <nav class="header__nav" id="nav" aria-label="Navegación principal">
+        <ul class="header__nav-list">
+          <li><a href="#inicio" class="header__nav-link">Inicio</a></li>
+          <li><a href="#productos" class="header__nav-link">Productos</a></li>
+          <li><a href="#info" class="header__nav-link">Especialidades</a></li>
+          <li><a href="#nosotros" class="header__nav-link">Nosotros</a></li>
+          <li><a href="#postres" class="header__nav-link">Postres</a></li>
+          <li><a href="#contacto" class="header__nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="header__overlay-bg" id="navOverlay"></div>
+    </div>
+  </header>
+
+  <!-- Hojas decorativas flotantes -->
+  <div class="floating-leaves" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" class="leaf leaf--1" viewBox="0 0 24 24" width="20" height="20">
+      <path d="M12 2C8 6 4 12 6 18c1.5 3 6 5 6 5s4.5-2 6-5c2-6-2-12-6-16z" fill="#7B9E5A" opacity="0.5" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="leaf leaf--2" viewBox="0 0 24 24" width="16" height="16">
+      <path d="M12 2C8 6 4 12 6 18c1.5 3 6 5 6 5s4.5-2 6-5c2-6-2-12-6-16z" fill="#A8C68F" opacity="0.4" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="leaf leaf--3" viewBox="0 0 24 24" width="14" height="14">
+      <path d="M12 2C8 6 4 12 6 18c1.5 3 6 5 6 5s4.5-2 6-5c2-6-2-12-6-16z" fill="#7B9E5A" opacity="0.35" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="leaf leaf--4" viewBox="0 0 24 24" width="18" height="18">
+      <path d="M12 2C8 6 4 12 6 18c1.5 3 6 5 6 5s4.5-2 6-5c2-6-2-12-6-16z" fill="#A8C68F" opacity="0.3" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="leaf leaf--5" viewBox="0 0 24 24" width="12" height="12">
+      <path d="M12 2C8 6 4 12 6 18c1.5 3 6 5 6 5s4.5-2 6-5c2-6-2-12-6-16z" fill="#7B9E5A" opacity="0.25" />
+    </svg>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="img/hero-desktop.jpg">
+          <source media="(min-width: 768px)" srcset="img/hero-tablet.jpg">
+          <img src="img/hero-mobile.jpg" alt="Preparación de matcha latte" class="hero__img">
+        </picture>
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__particles" aria-hidden="true"></div>
+      <div class="hero__content">
+        <div class="hero__badge reveal-up">茶</div>
+        <p class="hero__subtitle reveal-up" data-delay="1">Casa de Té Asiática</p>
+        <h1 class="hero__title reveal-up" data-delay="2">El arte del <em>matcha</em></h1>
+        <p class="hero__desc reveal-up" data-delay="3">Importamos matcha ceremonial desde Uji y lo preparamos con la receta tradicional japonesa.
+        </p>
+        <div class="hero__ctas reveal-up" data-delay="4">
+          <a href="#productos" class="btn btn--primary">Explorar carta</a>
+          <a href="#nosotros" class="btn btn--ghost">Nuestra historia</a>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Marquee de variedades de té -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee">
+        <div class="marquee__inner">
+          <span>抹茶</span><span>·</span>
+          <span>Matcha</span><span>·</span>
+          <span>煎茶</span><span>·</span>
+          <span>Sencha</span><span>·</span>
+          <span>焙茶</span><span>·</span>
+          <span>Hojicha</span><span>·</span>
+          <span>玄米茶</span><span>·</span>
+          <span>Genmaicha</span><span>·</span>
+          <span>玉露</span><span>·</span>
+          <span>Gyokuro</span><span>·</span>
+          <span>抹茶</span><span>·</span>
+          <span>Matcha</span><span>·</span>
+          <span>煎茶</span><span>·</span>
+          <span>Sencha</span><span>·</span>
+          <span>焙茶</span><span>·</span>
+          <span>Hojicha</span><span>·</span>
+          <span>玄米茶</span><span>·</span>
+          <span>Genmaicha</span><span>·</span>
+          <span>玉露</span><span>·</span>
+          <span>Gyokuro</span><span>·</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrusel de productos -->
+    <section class="carousel-section" id="productos">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Carta</span>
+          <h2 class="section-title">Nuestros Productos</h2>
+          <p class="section-subtitle">Hojas traídas directo de productores japoneses</p>
+        </div>
+        <div class="carousel" role="region" aria-label="Carousel de productos">
+          <div class="carousel__track" id="carouselTrack">
+            <div class="carousel__slide">
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/carousel-1-desktop.jpg">
+                <source media="(min-width: 768px)" srcset="img/carousel-1-tablet.jpg">
+                <img src="img/carousel-1-mobile.jpg" alt="Matcha en polvo premium" loading="lazy">
+              </picture>
+              <div class="carousel__caption">
+                <span class="carousel__tag">Destacado</span>
+                <h3>Matcha Ceremonial</h3>
+                <p>Grado ceremonial importado de Uji, Kyoto.</p>
+              </div>
+            </div>
+            <div class="carousel__slide">
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/carousel-2-desktop.jpg">
+                <source media="(min-width: 768px)" srcset="img/carousel-2-tablet.jpg">
+                <img src="img/carousel-2-mobile.jpg" alt="Set de ceremonia del té" loading="lazy">
+              </picture>
+              <div class="carousel__caption">
+                <span class="carousel__tag">Experiencia</span>
+                <h3>Ceremonia del Té</h3>
+                <p>Sesiones guiadas de 90 minutos con nuestro maestro.</p>
+              </div>
+            </div>
+            <div class="carousel__slide">
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/carousel-3-desktop.jpg">
+                <source media="(min-width: 768px)" srcset="img/carousel-3-tablet.jpg">
+                <img src="img/carousel-3-mobile.jpg" alt="Matcha latte con arte" loading="lazy">
+              </picture>
+              <div class="carousel__caption">
+                <span class="carousel__tag">Popular</span>
+                <h3>Matcha Latte</h3>
+                <p>Cremoso, espumoso y con leche de avena.</p>
+              </div>
+            </div>
+            <div class="carousel__slide">
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/carousel-4-desktop.jpg">
+                <source media="(min-width: 768px)" srcset="img/carousel-4-tablet.jpg">
+                <img src="img/carousel-4-mobile.jpg" alt="Jardín zen japonés" loading="lazy">
+              </picture>
+              <div class="carousel__caption">
+                <span class="carousel__tag">Espacio</span>
+                <h3>Ambiente Zen</h3>
+                <p>Salón con tatamis, luz natural y música ambiente.</p>
+              </div>
+            </div>
+            <div class="carousel__slide">
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/carousel-5-desktop.jpg">
+                <source media="(min-width: 768px)" srcset="img/carousel-5-tablet.jpg">
+                <img src="img/carousel-5-mobile.jpg" alt="Postres de matcha variados" loading="lazy">
+              </picture>
+              <div class="carousel__caption">
+                <span class="carousel__tag">Dulce</span>
+                <h3>Postres Artesanales</h3>
+                <p>Mochi, dorayaki y cheesecake hechos cada mañana.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" id="carouselPrev" aria-label="Anterior">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button class="carousel__btn carousel__btn--next" id="carouselNext" aria-label="Siguiente">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="carousel__progress">
+            <div class="carousel__progress-bar" id="carouselProgress"></div>
+          </div>
+          <div class="carousel__dots" id="carouselDots"></div>
+        </div>
+      </div>
+      <div class="seigaiha-divider" aria-hidden="true"></div>
+    </section>
+
+    <!-- Grid de especialidades -->
+    <section class="info-pills" id="info">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Especialidades</span>
+          <h2 class="section-title">Qué vas a encontrar</h2>
+          <p class="section-subtitle">Siete propuestas para entrar al mundo del té japonés</p>
+        </div>
+        <div class="pills-grid">
+          <article class="pill reveal" data-delay="0">
+            <div class="pill__icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path d="M24 12 C20 18, 18 22, 19 30 C20 33, 24 35, 24 35 C24 35, 28 33, 29 30 C30 22, 28 18, 24 12Z"
+                  fill="currentColor" opacity="0.7" />
+              </svg>
+            </div>
+            <h3 class="pill__title">Matcha Premium</h3>
+            <p class="pill__text">Grado ceremonial de primera cosecha, cultivado a la sombra en Uji, Kyoto.</p>
+            <span class="pill__number">01</span>
+          </article>
+          <article class="pill reveal" data-delay="1">
+            <div class="pill__icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path d="M14 28 Q24 10 34 28" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <line x1="24" y1="28" x2="24" y2="36" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </div>
+            <h3 class="pill__title">Té Verde Sencha</h3>
+            <p class="pill__text">Hojas enteras al vapor con notas frescas y vegetales. El clásico japonés.</p>
+            <span class="pill__number">02</span>
+          </article>
+          <article class="pill reveal" data-delay="2">
+            <div class="pill__icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path d="M16 20 C16 16, 20 14, 24 14 C28 14, 32 16, 32 20 C32 26, 24 32, 24 32 C24 32, 16 26, 16 20Z"
+                  fill="currentColor" opacity="0.5" />
+                <circle cx="24" cy="22" r="3" fill="none" stroke="#F5F0E8" stroke-width="1" />
+              </svg>
+            </div>
+            <h3 class="pill__title">Hojicha</h3>
+            <p class="pill__text">Té verde tostado con aroma acaramelado. Bajo en cafeína, ideal para la noche.</p>
+            <span class="pill__number">03</span>
+          </article>
+          <article class="pill reveal" data-delay="3">
+            <div class="pill__icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <circle cx="20" cy="22" r="2" fill="currentColor" opacity="0.5" />
+                <circle cx="28" cy="22" r="2" fill="currentColor" opacity="0.5" />
+                <circle cx="24" cy="28" r="2" fill="currentColor" opacity="0.5" />
+                <circle cx="18" cy="28" r="1.5" fill="currentColor" opacity="0.3" />
+                <circle cx="30" cy="28" r="1.5" fill="currentColor" opacity="0.3" />
+              </svg>
+            </div>
+            <h3 class="pill__title">Genmaicha</h3>
+            <p class="pill__text">Mezcla de té verde con arroz tostado. Sabor cálido y reconfortante.</p>
+            <span class="pill__number">04</span>
+          </article>
+          <article class="pill reveal" data-delay="4">
+            <div class="pill__icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path d="M15 30 C15 22, 18 16, 24 14 C30 16, 33 22, 33 30" fill="none" stroke="currentColor"
+                  stroke-width="1.5" />
+                <line x1="15" y1="30" x2="33" y2="30" stroke="currentColor" stroke-width="1.5" />
+                <path d="M20 30 L20 34 M24 30 L24 34 M28 30 L28 34" stroke="currentColor" stroke-width="1" />
+              </svg>
+            </div>
+            <h3 class="pill__title">Gyokuro</h3>
+            <p class="pill__text">Cultivado bajo sombra durante tres semanas antes de la cosecha. Umami intenso y final prolongado.</p>
+            <span class="pill__number">05</span>
+          </article>
+          <article class="pill reveal" data-delay="5">
+            <div class="pill__icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path d="M16 18 L24 14 L32 18 L32 30 L24 34 L16 30Z" fill="none" stroke="currentColor"
+                  stroke-width="1.5" />
+                <path d="M16 18 L24 22 L32 18 M24 22 L24 34" fill="none" stroke="currentColor" stroke-width="1"
+                  opacity="0.5" />
+              </svg>
+            </div>
+            <h3 class="pill__title">Ceremonia del Té</h3>
+            <p class="pill__text">Sesiones de 90 minutos guiadas por nuestro maestro, certificado en la escuela Urasenke.</p>
+            <span class="pill__number">06</span>
+          </article>
+          <article class="pill reveal" data-delay="6">
+            <div class="pill__icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <rect x="16" y="18" width="16" height="12" rx="2" fill="none" stroke="currentColor"
+                  stroke-width="1.5" />
+                <path d="M16 22 L32 22" stroke="currentColor" stroke-width="1" />
+                <path d="M20 28 L20 34 M28 28 L28 34" stroke="currentColor" stroke-width="1.5" />
+                <circle cx="24" cy="15" r="2" fill="currentColor" opacity="0.5" />
+              </svg>
+            </div>
+            <h3 class="pill__title">Envíos a Domicilio</h3>
+            <p class="pill__text">Recibí tu té favorito en casa. Envío gratis en pedidos mayores a $15.000.</p>
+            <span class="pill__number">07</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divisor con taza humeante -->
+    <div class="steam-break" aria-hidden="true">
+      <div class="steam-break__inner">
+        <div class="steam-cup">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+            <path d="M25 45 h70 v35 c0 12-10 20-25 20h-20c-15 0-25-8-25-20z" fill="#2D4A2D" opacity="0.9" />
+            <path d="M95 50 c15 0 20 8 20 15s-5 15-20 15" fill="none" stroke="#2D4A2D" stroke-width="3" opacity="0.7" />
+            <ellipse cx="60" cy="45" rx="35" ry="4" fill="#7B9E5A" opacity="0.6" />
+          </svg>
+          <div class="steam">
+            <div class="steam__line steam__line--1"></div>
+            <div class="steam__line steam__line--2"></div>
+            <div class="steam__line steam__line--3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nosotros: historia y stats -->
+    <section class="about" id="nosotros">
+      <div class="container">
+        <div class="about__header reveal">
+          <span class="section-tag">Sobre nosotros</span>
+          <h2 class="section-title">Nuestra Historia</h2>
+        </div>
+        <div class="about__columns">
+          <div class="about__img-wrap reveal">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/about-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="img/about-tablet.jpg">
+              <img src="img/about-mobile.jpg" alt="Maestro de té preparando matcha" loading="lazy" class="about__img">
+            </picture>
+            <div class="about__img-badge">
+              <span class="about__img-badge-year">2018</span>
+              <span class="about__img-badge-text">Desde</span>
+            </div>
+          </div>
+          <div class="about__timeline reveal">
+            <div class="timeline">
+              <div class="timeline__item">
+                <span class="timeline__year">2018</span>
+                <div class="timeline__body">
+                  <h3 class="timeline__title">Viaje a Kyoto</h3>
+                  <p>Un viaje a Kyoto nos cambió la forma de pensar el té. Volvimos con la idea de abrir una casa
+                    donde poder compartir esa tradición.</p>
+                </div>
+              </div>
+              <div class="timeline__item">
+                <span class="timeline__year">2019</span>
+                <div class="timeline__body">
+                  <h3 class="timeline__title">Apertura en Palermo</h3>
+                  <p>Nace CHAEN en Buenos Aires, con matcha importado directamente de los campos de Uji y un espacio
+                    diseñado para la contemplación.</p>
+                </div>
+              </div>
+              <div class="timeline__item">
+                <span class="timeline__year">2022</span>
+                <div class="timeline__body">
+                  <h3 class="timeline__title">Maestro certificado</h3>
+                  <p>Nuestro maestro de té obtiene su certificación oficial en Japón. Se suman pasteleros especializados
+                    en repostería japonesa.</p>
+                </div>
+              </div>
+              <div class="timeline__item">
+                <span class="timeline__year">2024</span>
+                <div class="timeline__body">
+                  <h3 class="timeline__title">Comunidad de té</h3>
+                  <p>Más de 3.000 clientes eligen CHAEN. Fusionamos tradición y modernidad en cada taza.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about__bottom reveal">
+          <div class="about__stats">
+            <div class="about__stat">
+              <svg xmlns="http://www.w3.org/2000/svg" class="about__stat-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+              <span class="about__stat-number" data-target="7">0</span>
+              <span class="about__stat-label">Años</span>
+            </div>
+            <div class="about__stat-divider"></div>
+            <div class="about__stat">
+              <svg xmlns="http://www.w3.org/2000/svg" class="about__stat-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path d="M12 2C8 6 4 12 6 18c1.5 3 6 5 6 5s4.5-2 6-5c2-6-2-12-6-16z" fill="none" stroke="currentColor"
+                  stroke-width="1.5" />
+              </svg>
+              <span class="about__stat-number" data-target="12">0</span>
+              <span class="about__stat-label">Variedades</span>
+            </div>
+            <div class="about__stat-divider"></div>
+            <div class="about__stat">
+              <svg xmlns="http://www.w3.org/2000/svg" class="about__stat-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" fill="none" stroke="currentColor"
+                  stroke-width="1.5" />
+                <circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+              <span class="about__stat-number" data-target="3000">0</span>
+              <span class="about__stat-label">Clientes</span>
+            </div>
+          </div>
+          <a href="#contacto" class="btn btn--secondary">Visitanos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Postres -->
+    <section class="desserts" id="postres">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Pastelería</span>
+          <h2 class="section-title">Postres Artesanales</h2>
+          <p class="section-subtitle">Hechos cada mañana con ingredientes japoneses</p>
+        </div>
+        <div class="desserts__grid">
+          <article class="card reveal">
+            <div class="card__img-wrap">
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/mochi-desktop.jpg">
+                <source media="(min-width: 768px)" srcset="img/mochi-tablet.jpg">
+                <img src="img/mochi-mobile.jpg" alt="Mochi de matcha relleno" loading="lazy" class="card__img">
+              </picture>
+              <span class="card__badge">Favorito</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Mochi de Matcha</h3>
+              <p class="card__text">Masa de arroz glutinoso rellena de pasta de porotos rojos y matcha. Textura suave y
+                elástica.</p>
+              <div class="card__footer">
+                <span class="card__price">$3.200</span>
+                <button class="card__btn" aria-label="Agregar mochi">Agregar</button>
+              </div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img-wrap">
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/dorayaki-desktop.jpg">
+                <source media="(min-width: 768px)" srcset="img/dorayaki-tablet.jpg">
+                <img src="img/dorayaki-mobile.jpg" alt="Dorayaki relleno de crema" loading="lazy" class="card__img">
+              </picture>
+              <span class="card__badge">Clásico</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Dorayaki</h3>
+              <p class="card__text">Dos panqueques esponjosos rellenos de anko dulce. El favorito de Doraemon y el
+                nuestro.</p>
+              <div class="card__footer">
+                <span class="card__price">$2.800</span>
+                <button class="card__btn" aria-label="Agregar dorayaki">Agregar</button>
+              </div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img-wrap">
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/cheesecake-desktop.jpg">
+                <source media="(min-width: 768px)" srcset="img/cheesecake-tablet.jpg">
+                <img src="img/cheesecake-mobile.jpg" alt="Cheesecake de matcha" loading="lazy" class="card__img">
+              </picture>
+              <span class="card__badge">Nuevo</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Cheesecake de Matcha</h3>
+              <p class="card__text">Estilo japonés, ultra suave y aireado. Con base de galleta y glaseado de matcha.</p>
+              <div class="card__footer">
+                <span class="card__price">$4.500</span>
+                <button class="card__btn" aria-label="Agregar cheesecake">Agregar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner CTA reserva ceremonia -->
+    <section class="cta-banner reveal">
+      <div class="container">
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Reservá tu Ceremonia del Té</h2>
+          <p class="cta-banner__text">90 minutos con nuestro maestro certificado para conocer el ritual desde adentro.</p>
+          <a href="#contacto" class="btn btn--cta btn--lg">Reservar ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto: info y formulario -->
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Contacto</span>
+          <h2 class="section-title">Vení a visitarnos</h2>
+          <p class="section-subtitle">Te esperamos en Palermo, a una cuadra de los bosques</p>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <div class="contact__item">
+              <div class="contact__icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" fill="none" stroke="currentColor"
+                    stroke-width="1.5" />
+                  <circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div>
+                <strong>Dirección</strong>
+                <p>Av. del Libertador 4820, Palermo, CABA</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                    fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div>
+                <strong>Teléfono</strong>
+                <p>+54 11 5555-0142</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor"
+                    stroke-width="1.5" />
+                  <path d="M22 4L12 13 2 4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <p>hola@chaen.com.ar</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div>
+                <strong>Horarios</strong>
+                <p>Lun a Sáb: 9:00 — 21:00<br>Domingos: 10:00 — 20:00</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact__form reveal" aria-label="Formulario de contacto">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="4" required
+                placeholder="¿En qué podemos ayudarte?"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <svg xmlns="http://www.w3.org/2000/svg" class="footer__logo-icon" viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <path d="M20 8 C15 14, 12 20, 14 28 C16 32, 20 34, 20 34 C20 34, 24 32, 26 28 C28 20, 25 14, 20 8Z"
+              fill="currentColor" opacity="0.8" />
+          </svg>
+          <div class="footer__brand-text">
+            <span class="footer__brand-name">CHAEN 茶園</span>
+            <span class="footer__brand-tagline">Casa de Té Asiática</span>
+          </div>
+        </div>
+        <div class="footer__links">
+          <a href="#inicio">Inicio</a>
+          <a href="#productos">Productos</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="footer__social">
+          <a href="https://instagram.com" class="footer__social-link" aria-label="Instagram" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
+            </svg>
+          </a>
+          <a href="https://tiktok.com" class="footer__social-link" aria-label="TikTok" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="https://facebook.com" class="footer__social-link" aria-label="Facebook" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" fill="none" stroke="currentColor"
+                stroke-width="1.5" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón volver arriba -->
+  <a href="#inicio" class="back-to-top" id="backToTop" aria-label="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
