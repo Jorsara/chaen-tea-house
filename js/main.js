@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1800);
   });
 
+  const marqueeInner = document.getElementById('marqueeInner');
+  if (marqueeInner) {
+    marqueeInner.innerHTML += marqueeInner.innerHTML;
+  }
+
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
   const navOverlay = document.getElementById('navOverlay');
@@ -50,9 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const dotsContainer = document.getElementById('carouselDots');
   const progressBar = document.getElementById('carouselProgress');
   const totalReal = origSlides.length;
-  const slideGap = 16;
   const cloneCount = 2;
-  let autoPlayInterval;
+  const getSlideGap = () => parseFloat(getComputedStyle(track).gap) || 0;
   let isTransitioning = false;
 
   for (let i = 0; i < cloneCount; i++) {
@@ -104,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function positionTrack(animate) {
     const slideW = allSlides[0].offsetWidth;
     const containerW = carouselEl.offsetWidth;
+    const slideGap = getSlideGap();
     const centerOffset = (containerW - slideW) / 2;
     const offset = currentIndex * (slideW + slideGap) - centerOffset;
 
@@ -143,36 +148,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   positionTrack(false);
 
-  prevBtn.addEventListener('click', () => {
+  prevBtn.addEventListener('click', e => {
+    e.preventDefault();
     goToSlide(currentIndex - 1);
-    resetAutoPlay();
   });
 
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener('click', e => {
+    e.preventDefault();
     goToSlide(currentIndex + 1);
-    resetAutoPlay();
   });
-
-  function startAutoPlay() {
-    autoPlayInterval = setInterval(() => {
-      goToSlide(currentIndex + 1);
-    }, 4500);
-  }
-
-  function resetAutoPlay() {
-    clearInterval(autoPlayInterval);
-    startAutoPlay();
-  }
-
-  startAutoPlay();
-
-  carouselEl.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-  carouselEl.addEventListener('mouseleave', startAutoPlay);
 
   let touchStartX = 0;
   carouselEl.addEventListener('touchstart', e => {
     touchStartX = e.changedTouches[0].screenX;
-    clearInterval(autoPlayInterval);
   }, { passive: true });
 
   carouselEl.addEventListener('touchend', e => {
@@ -180,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (Math.abs(diff) > 50) {
       goToSlide(diff > 0 ? currentIndex + 1 : currentIndex - 1);
     }
-    startAutoPlay();
   }, { passive: true });
 
   const reveals = document.querySelectorAll('.reveal, .reveal-up');
